@@ -35,7 +35,7 @@ const options = {
     tooltip: false,
   },
   responsive: true, 
-  maintainAspectRatio: false,
+  maintainAspectRatio: !isMobile,
   elements: {
     arc: {
       backgroundColor: colorize.bind(null, false, false),
