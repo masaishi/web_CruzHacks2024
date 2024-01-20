@@ -1,6 +1,6 @@
 'use client';
 import * as React from 'react';
-import { Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
+import { Grid, Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import GoogleSearchBar from '@/component/GoogleSearchBar';
@@ -33,6 +33,8 @@ function Dashboard() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          justifyContent: 'center', // Center the content horizontally
+          textAlign: 'center',
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -41,9 +43,31 @@ function Dashboard() {
         <Typography component="h1" variant="h5">
           Cruz Hack 2024
         </Typography>
-        <Box margin={10}>
-          <GoogleSearchBar />
+
+        <Box
+        width={'100%'}
+        height={'75%'}
+        marginTop={5}
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            gap: '30%'
+          }}
+        >
+          <Box width={'100%'} height={'75%'}>
+            <Typography>Section </Typography>
+          </Box>
+
+          <Box width={'100%'} height={'75%'}>
+            <Typography>Section </Typography>
+          </Box>
+
+          <Box width={'100%'} height={'75%'}>
+            <Typography>Section </Typography>
+          </Box>
         </Box>
+        
       </Box>
       <Box
         sx={{
