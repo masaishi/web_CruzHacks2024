@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { isMobile } from "react-device-detect";
 
 import GoogleSearchBar from "@/components/GoogleSearchBar";
-import ColoredChips from "@/components/chips";
+import ColoredChips from "@/components/chips"
 import PieChart from "@/components/PieChart";
 import Copyright from "@/components/Copyright";
 
@@ -46,7 +46,7 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={"100%"}
+            width={isMobile ? "80%" : "80%"}
             height={"75%"}
             className="component"
             sx={{
