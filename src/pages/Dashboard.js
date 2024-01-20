@@ -11,6 +11,8 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/chips';
 import PieChart from '@/components/PieChart';
@@ -39,28 +41,48 @@ function Dashboard() {
         <Typography component='h1' variant='h5'>
           Cruz Hack 2024
         </Typography>
-
         <Box
-          width={'100%'}
-          height={'75%'}
+          width={isMobile ? '70%' : '130%'}
+          // height={'75%'}
           marginTop={5}
+          className="flex-container"
           sx={{
             display: 'flex',
-            flexDirection: 'row',
             justifyContent: 'space-around',
-            gap: 3,
+            gap: '15%',
           }}
         >
-          <Box marginTop={5} width={'100%'} height={'75%'}>
+          {/* GoogleSearchBar */}
+          <Box
+            marginTop={5}
+            width={'100%'}
+            height={'75%'}
+            className="component"
+            sx={{
+              flexDirection: isMobile ? 'row' : 'column',
+            }}
+          >
             <GoogleSearchBar />
             <ColoredChips />
           </Box>
 
-          <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+          {/* Section */}
+          <Box
+            width={'100%'}
+            height={'75%'}
+            className="component"
+          >
+            <Typography>Section</Typography>
           </Box>
 
-          <Box width={'100%'} height={'75%'}>
+          {/* PieChart */}
+          <Box
+            width={isMobile ? '120%' : '100%'}
+            className="component"
+            sx={{
+              flexDirection: isMobile ? 'row' : 'column',
+            }}
+          >
             <PieChart />
           </Box>
         </Box>
