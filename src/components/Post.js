@@ -10,56 +10,54 @@ import Box from '@mui/material/Box';
  * @returns {JSX.Element} The rendered Post component.
  */
 
+let sentiment_map = {
+  joy: 'positive',
+  surprise: 'positive',
+  neutral: 'neutral',
+  sadness: 'negative',
+  fear: 'negative',
+  disgust: 'negative',
+};
 
+function highlight_sentence(sentence_text, sentiment) {
+  let text_color = 'black';
+  switch (sentiment_map(sentiment)) {
+    case 'positive':
+      text_color = 'green';
+      break;
+    case 'neutral':
+      text_color = 'black';
+      break;
+    case 'negative':
+      text_color = 'red';
+      break;
+  }
+  return (
+    <Typography color={text_color} display={'inline'}>
+      {sentence_text}
+    </Typography>
+  );
+}
 
-// let sentiment_map = {
-//   joy: 'positive',
-//   surprise: 'positive',
-//   neutral: 'neutral',
-//   sadness: 'negative',
-//   fear: 'negative',
-//   disgust: 'negative',
-// };
+function highlight_post(post) {
+  let colored_post = [];
 
-// function highlight_sentence(sentence_text, sentiment) {
-//   let text_color = 'black';
-//   switch (sentiment_map(sentiment)) {
-//     case 'positive':
-//       text_color = 'green';
-//       break;
-//     case 'neutral':
-//       text_color = 'black';
-//       break;
-//     case 'negative':
-//       text_color = 'red';
-//       break;
-//   }
-//   return (
-//     <Typography color={text_color} display={'inline'}>
-//       {sentence_text}
-//     </Typography>
-//   );
-// }
+  post.forEach((sentence) => {
+    sentence_id = first_sentence[0];
+    sentiment = first_sentence[1];
+    sentiment_score = first_sentence[2];
+    sentence_text = first_sentence[3];
 
-// function highlight_post(post) {
-//   let colored_post = [];
+    colored_post.push(highlight_sentence(sentence_text, sentiment));
+  });
 
-//   post.forEach((sentence) => {
-//     sentence_id = first_sentence[0];
-//     sentiment = first_sentence[1];
-//     sentiment_score = first_sentence[2];
-//     sentence_text = first_sentence[3];
-
-//     colored_post.push(highlight_sentence(sentence_text, sentiment));
-//   });
-
-//   return colored_post;
-// }
+  return colored_post;
+}
 
 export default function Post(props) {
   return (
     <Box
-      w={100}
+      w={'100%'}
       my={1}
       p={'0.5rem'}
       borderRadius={2}
