@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { isMobile } from "react-device-detect";
 
 import GoogleSearchBar from "@/components/GoogleSearchBar";
-import ColoredChips from "@/components/chips";
+import ColoredChips from "@/components/chips"
 import PieChart from "@/components/PieChart";
 import Copyright from "@/components/Copyright";
 
@@ -34,7 +34,7 @@ function Dashboard() {
           Cruz Hack 2024
         </Typography>
         <Box
-          width={isMobile ? "70%" : "130%"}
+          width={isMobile ? "70%" : "100%"}
           marginTop={5}
           className="flex-container"
           sx={{
@@ -46,9 +46,9 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={"100%"}
+            width={isMobile ? "80%" : "80%"}
             height={"75%"}
-            className="component"
+            
             sx={{
               flexDirection: isMobile ? "row" : "column",
             }}
@@ -58,14 +58,14 @@ function Dashboard() {
           </Box>
 
           {/* Section */}
-          <Box width={"100%"} height={"75%"} className="component">
+          <Box width={"100%"} height={"75%"}>
             <Typography>Section</Typography>
           </Box>
 
           {/* PieChart */}
           <Box
             width={isMobile ? "120%" : "100%"}
-            className="component"
+            
             sx={{
               flexDirection: isMobile ? "row" : "column",
             }}
