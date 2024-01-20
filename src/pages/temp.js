@@ -1,4 +1,4 @@
-import ColoredChips from '../components/Chips';
+import ColoredChips from '../components/chips';
 import Box from '@mui/material/Box';
 
 import Chip from '@mui/material/Chip';
