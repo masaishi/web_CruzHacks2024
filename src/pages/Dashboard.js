@@ -6,7 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
-import { Google } from '@mui/icons-material';
 
 // const defaultTheme = createTheme();
 
@@ -16,12 +15,13 @@ function Dashboard() {
     <Container >
       <CssBaseline />
       <Box
+        width={'100%'}
         sx={{
           marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center', // Center the content horizontally
+          justifyContent: 'center',
           textAlign: 'center',
         }}
       >
@@ -33,9 +33,9 @@ function Dashboard() {
         </Typography>
 
         <Box
-        width={'100%'}
-        height={'75%'}
-        marginTop={5}
+          width={'130%'}
+          height={'75%'}
+          marginTop={5}
           sx={{
             display: 'flex',
             flexDirection: 'row',
