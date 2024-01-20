@@ -1,16 +1,30 @@
 'use client';
 import * as React from 'react';
-import { Grid, Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
+import {
+  Grid,
+  Avatar,
+  CssBaseline,
+  Link,
+  Box,
+  Typography,
+  Container,
+} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import GoogleSearchBar from '@/component/GoogleSearchBar';
+import ColoredChips from '@/components/chips';
 
 function Copyright(props) {
   return (
     <Box marginBottom={1}>
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      <Typography
+        variant='body2'
+        color='text.secondary'
+        align='center'
+        {...props}
+      >
         {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
+        <Link color='inherit' href='https://mui.com/'>
           Your Website
         </Link>{' '}
         {new Date().getFullYear()}
@@ -23,9 +37,8 @@ function Copyright(props) {
 // const defaultTheme = createTheme();
 
 function Dashboard() {
-
   return (
-    <Container >
+    <Container>
       <CssBaseline />
       <Box
         sx={{
@@ -40,23 +53,24 @@ function Dashboard() {
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
           <SearchIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component='h1' variant='h5'>
           Cruz Hack 2024
         </Typography>
 
         <Box
-        width={'100%'}
-        height={'75%'}
-        marginTop={5}
+          width={'100%'}
+          height={'75%'}
+          marginTop={5}
           sx={{
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-around',
-            gap: '30%'
+            gap: 3,
           }}
         >
           <Box width={'100%'} height={'75%'}>
             <Typography>Section </Typography>
+            <ColoredChips />
           </Box>
 
           <Box width={'100%'} height={'75%'}>
@@ -67,7 +81,6 @@ function Dashboard() {
             <Typography>Section </Typography>
           </Box>
         </Box>
-        
       </Box>
       <Box
         sx={{

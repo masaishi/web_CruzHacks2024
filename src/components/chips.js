@@ -46,6 +46,7 @@ function createColoredChips(keywords) {
         label={keywords[i]}
         variant='outlined'
         color={chip_color[i]}
+        onClick={() => console.log('clicked')}
         clickable
       />
     );
@@ -55,8 +56,7 @@ function createColoredChips(keywords) {
 
 export default function Test({ res }) {
   return (
-    <Box>
-      <h1>Temp</h1>
+    <Box m='0.50rem'>
       <Box
         sx={{
           display: 'flex',
