@@ -1,6 +1,8 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+
 Chart.register(ArcElement);
 
 const data = {
@@ -32,6 +34,8 @@ const options = {
     legend: true,
     tooltip: false,
   },
+  responsive: true, 
+  maintainAspectRatio: false,
   elements: {
     arc: {
       backgroundColor: colorize.bind(null, false, false),
@@ -42,7 +46,7 @@ const options = {
 
 const PieChart = () => {
   return (
-    <div>
+    <div >
       <Doughnut data={data} options={options} />
     </div>
   );

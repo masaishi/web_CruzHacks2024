@@ -105,3 +105,20 @@ a {
     color-scheme: dark;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+ 
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .component {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
