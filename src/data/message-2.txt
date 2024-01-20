@@ -1,0 +1,259 @@
+[
+    {
+        "comment_id": "h97pata",
+        "post_id": "o7c6mz",
+        "created": "2021-08-16 15:03:34",
+        "sentences": [
+            [
+                "a8ef57f8-868d-4d20-90d8-0b4fce8f0e0b",
+                "surprise",
+                0.5559009313583374,
+                "Im in porter!"
+            ],
+            [
+                "235ca223-425d-463c-aa15-a56bd4752808",
+                "sadness",
+                0.4455997049808502,
+                "And I've tried to reach out to the department multiple times and I've received silence back :/"
+            ],
+            [
+                "a9c43ac6-914b-4c0f-9806-8b1512c88a92",
+                "surprise",
+                0.5559009313583374,
+                "Im in porter!"
+            ],
+            [
+                "ddc168f4-f691-479f-a84d-9e6226f1a3b4",
+                "sadness",
+                0.4455997049808502,
+                "And I've tried to reach out to the department multiple times and I've received silence back :/"
+            ],
+            [
+                "0d21bc2e-a0ec-4224-9723-5bfae972bba5",
+                "surprise",
+                0.5559009313583374,
+                "Im in porter!"
+            ],
+            [
+                "4e35cd70-3a9d-4ea5-b6e6-1eb32d7d1d2f",
+                "sadness",
+                0.4455997049808502,
+                "And I've tried to reach out to the department multiple times and I've received silence back :/"
+            ]
+        ]
+    },
+    {
+        "comment_id": "i9elycy",
+        "post_id": "o7c6mz",
+        "created": "2022-05-20 19:23:41",
+        "sentences": [
+            [
+                "59d32162-df35-4ed3-a66e-2bd9089b52bc",
+                "joy",
+                0.7635965347290039,
+                "Hi!"
+            ],
+            [
+                "e80bc99a-cdd7-4cea-8b1e-848220f75650",
+                "neutral",
+                0.3723706007003784,
+                "I'm Mo, I'm a 20 y/o rising senior Film Major looking for a place for next year!"
+            ],
+            [
+                "23502be7-78e2-4837-85f1-4c85038ff804",
+                "joy",
+                0.6421562433242798,
+                "I'm LGBT friendly (actually would prefer a place w other LGBT ppl), 420 and alcohol friendly as well as well, I'll be 21 by September when my current lease is up."
+            ],
+            [
+                "f4e822ae-f8e4-45c5-9236-d4c9974d76d7",
+                "neutral",
+                0.8518116474151611,
+                "HMU if you're looking for someone to fill in!"
+            ],
+            [
+                "25555574-5fdf-4b01-b9fe-8709b54e516b",
+                "neutral",
+                0.7772234678268433,
+                ": )"
+            ]
+        ]
+    },
+    {
+        "comment_id": "i9o2evs",
+        "post_id": "o7c6mz",
+        "created": "2022-05-23 03:36:01",
+        "sentences": [
+            [
+                "1255d38e-4240-481a-aa54-3529849a3067",
+                "neutral",
+                0.85798579454422,
+                "Messaged"
+            ],
+            [
+                "e0b3a626-6966-4836-aa45-af105eeb84d2",
+                "neutral",
+                0.85798579454422,
+                "Messaged"
+            ]
+        ]
+    },
+    {
+        "comment_id": "h8l4tpa",
+        "post_id": "o7c6mz",
+        "created": "2021-08-11 14:51:43",
+        "sentences": [
+            [
+                "3fdc5754-aaa3-4be8-ace8-248e6725d2ce",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "2087666a-d2e7-4034-bcfc-882dc89211b6",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "6d767802-95fd-438e-a008-02eaf5d78ba5",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "628a3b80-5d7a-4403-8c62-aaa1a31b7925",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "9a849d07-ee28-4414-b1ce-57876057e584",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "740a0093-f241-4f47-afc0-7b618158eb7c",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "91761208-3d99-4e75-a9f9-b08668271837",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "1266981c-7878-462c-a57a-69be819de8d3",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "f318d9dc-7aa6-413c-86b4-26995a6b45d2",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "402b815a-7b6b-4f4a-a27b-f3c38eedeac9",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "f0f69ce5-d90a-4dcc-8fd7-47b3e65b8d52",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "ff9654e3-6321-4975-8aa0-1c955d24b6fb",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ],
+            [
+                "c96999c5-42f2-44f4-a18b-4d2bd0b922e8",
+                "joy",
+                0.8652105927467346,
+                "i have chats and PMs set to everyone."
+            ],
+            [
+                "19bf7735-5cb3-4c2c-8e16-85282b67e7de",
+                "neutral",
+                0.6899319291114807,
+                "idk if you got my chat request yesterday?"
+            ]
+        ]
+    },
+    {
+        "comment_id": "ibko7bo",
+        "post_id": "o7c6mz",
+        "created": "2022-06-07 21:49:39",
+        "sentences": [
+            [
+                "2b85b98c-a67b-42c0-a54a-99a5a6be015d",
+                "joy",
+                0.7635965347290039,
+                "Hi!"
+            ],
+            [
+                "d88a0976-17cc-4a3b-92bb-f45e010c1f3f",
+                "neutral",
+                0.8524004817008972,
+                "I\u2019m in the same situation."
+            ],
+            [
+                "2e35e73a-b0cd-40f1-8f0c-09dbd729b7d7",
+                "sadness",
+                0.7908217906951904,
+                "Me and my friend are looking to relocate to Santa Cruz for an internship in the summer."
+            ],
+            [
+                "15c35665-191b-436b-a628-bbebf35f01c5",
+                "neutral",
+                0.9346852898597717,
+                "Maybe we can find housing together."
+            ],
+            [
+                "cfaffb2b-dce5-4cd9-b758-7cf58356ab20",
+                "surprise",
+                0.6059917211532593,
+                "PM!"
+            ],
+            [
+                "a73a52a2-1a89-4499-bd41-150180b0e6a5",
+                "joy",
+                0.7635965347290039,
+                "Hi!"
+            ],
+            [
+                "295dfe91-b520-4627-a7fe-4fa4433ccbfe",
+                "neutral",
+                0.8524004817008972,
+                "I\u2019m in the same situation."
+            ],
+            [
+                "bc53ae48-fdc1-4d21-8bf1-bcd17c022d9a",
+                "sadness",
+                0.7908217906951904,
+                "Me and my friend are looking to relocate to Santa Cruz for an internship in the summer."
+            ],
+            [
+                "a9fdcc6f-0de0-4334-a153-6eb1d17f377c",
+                "neutral",
+                0.9346852898597717,
+                "Maybe we can find housing together."
+            ],
+            [
+                "fdeb5f9b-42eb-4f56-8e97-1c34e8854686",
+                "surprise",
+                0.6059917211532593,
+                "PM!"
+            ]
+        ]
+    }
+]

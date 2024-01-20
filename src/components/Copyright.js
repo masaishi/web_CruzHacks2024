@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
+import { Link, Box, Typography } from '@mui/material';
 
 function Copyright(props) {
   return (

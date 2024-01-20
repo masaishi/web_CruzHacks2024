@@ -1,0 +1,128 @@
+[
+    {
+        "id": "a7458225-2b49-40c4-a3cd-11d377fa6ffa",
+        "emotion_label": "joy",
+        "emotion_score": 0.544318675994873,
+        "text": "Hi, my name is Ryan Yumul and I'm part of a group of four people (3m, 1f) and we're looking for another roommate so we can apply to places for the coming year."
+    },
+    {
+        "id": "93d9992f-b4bf-47c9-8f54-d6856d259cb6",
+        "emotion_label": "neutral",
+        "emotion_score": 0.9491970539093018,
+        "text": "Please let us know if you'd be interested (female-identifying to even things out)."
+    },
+    {
+        "id": "9cb61883-86bf-43ce-b563-863e73e5a00f",
+        "emotion_label": "joy",
+        "emotion_score": 0.6613116264343262,
+        "text": "Hey, my name is Pablo (21 yrs old, they/he) and I\u2019m a rising UCSC senior studying Computer Science!"
+    },
+    {
+        "id": "40701895-6a5d-4a79-a6d9-abe84bd83eeb",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8751885890960693,
+        "text": "Looking for a single or spot in a double with a budget < 1200 / month."
+    },
+    {
+        "id": "33643551-6287-4024-a7ef-ae504c511d93",
+        "emotion_label": "joy",
+        "emotion_score": 0.8552646636962891,
+        "text": "I'm into hiking, creative coding, playing music (piano and electronic), and local art communities."
+    },
+    {
+        "id": "a53dc270-b716-44f0-a34c-59337ed8f165",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8596567511558533,
+        "text": "LGBTQ and 420 friendly."
+    },
+    {
+        "id": "1d33b65c-6206-492d-85c3-29676b25e4e1",
+        "emotion_label": "neutral",
+        "emotion_score": 0.9550876021385193,
+        "text": "Feel free to send a message if you still need a room filled for the year."
+    },
+    {
+        "id": "60fd7095-3096-40eb-af5e-6b91f3acce80",
+        "emotion_label": "joy",
+        "emotion_score": 0.891438364982605,
+        "text": "My housemates are graduating and I am looking for TWO TO THREE new housemates so I can stay in my cozy & convenient 3br/2ba apt in downtown (next door to metro center)!"
+    },
+    {
+        "id": "2f8691bc-f6f3-43b1-8223-8a5055c8cd74",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8579456210136414,
+        "text": "Can be a double (master br+ba) + a single (shares 2-sink bathroom w/ me) or just two singles!"
+    },
+    {
+        "id": "a24c193a-4ab0-4cee-a96b-532b67906851",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8197467923164368,
+        "text": "Lease starts in August."
+    },
+    {
+        "id": "97f9c87e-b959-4388-888f-439f82f20479",
+        "emotion_label": "neutral",
+        "emotion_score": 0.9083111882209778,
+        "text": "DM for pics + info :)"
+    },
+    {
+        "id": "6b6fb210-2223-49fa-b1ff-eb3266ce17c7",
+        "emotion_label": "neutral",
+        "emotion_score": 0.5582388043403625,
+        "text": "Hey I'm a 22M game design major transferring next fall, looking to move to the area this June."
+    },
+    {
+        "id": "3f49c337-8f06-4cf8-ac0e-1fdffa3c3b0d",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8722055554389954,
+        "text": "Looking for a single for about $1200 or less."
+    },
+    {
+        "id": "422968bd-adc7-43b4-8d78-c870c2551bbc",
+        "emotion_label": "joy",
+        "emotion_score": 0.7669593095779419,
+        "text": "I'm pretty chill, i keep to myself at home."
+    },
+    {
+        "id": "14f531f6-694d-4a61-89a7-12072a685ddc",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8098706603050232,
+        "text": "Usually I just do homework or play video games at home."
+    },
+    {
+        "id": "301e5024-0667-4153-b4a5-d8e4e5340be8",
+        "emotion_label": "neutral",
+        "emotion_score": 0.5262447595596313,
+        "text": "DM me if you've got a room or want to apply to a place together!"
+    },
+    {
+        "id": "b53e3c2d-b0cf-4ad9-90d1-6a4162f233a4",
+        "emotion_label": "neutral",
+        "emotion_score": 0.7871804237365723,
+        "text": "Looking to fill 2 apartment spots, about 20 min."
+    },
+    {
+        "id": "598453ab-9545-4a8f-9aec-3d47fc87efa8",
+        "emotion_label": "neutral",
+        "emotion_score": 0.8446124196052551,
+        "text": "drive from campus."
+    },
+    {
+        "id": "d0d512b9-cf56-4b76-9a7e-46a8b41918d5",
+        "emotion_label": "neutral",
+        "emotion_score": 0.9328110218048096,
+        "text": "Lease is mid Sept. - mid June, and ~1200 / mo."
+    },
+    {
+        "id": "001de6b6-060d-4f22-840d-c1bfa521eb2b",
+        "emotion_label": "neutral",
+        "emotion_score": 0.5159196257591248,
+        "text": "including utilities."
+    },
+    {
+        "id": "f9a79bff-5060-4984-8b34-7806a6339f1c",
+        "emotion_label": "neutral",
+        "emotion_score": 0.697222888469696,
+        "text": "Dm if interested!"
+    }
+]
