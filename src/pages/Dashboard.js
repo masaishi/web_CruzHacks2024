@@ -12,6 +12,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
+import ColoredChips from '@/components/chips';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
 
