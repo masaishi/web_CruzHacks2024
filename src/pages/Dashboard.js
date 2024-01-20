@@ -7,12 +7,9 @@ import { isMobile } from 'react-device-detect';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/ColoredChips';
-import Post from '@/components/Post';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
-
-// const defaultTheme = createTheme();
 
 function Dashboard() {
   return (
@@ -36,8 +33,8 @@ function Dashboard() {
           Cruz Hack 2024
         </Typography>
         <Box
-          width={isMobile ? '70%' : '110%'}
-          marginTop={5}
+          width={isMobile ? '80%' : '100%'}
+          marginTop={isMobile ? 0: 5}
           className='flex-container'
           sx={{
             display: 'flex',
@@ -48,7 +45,7 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={isMobile ? "80%" : "80%"}
+            width={isMobile ? "80%" : "100%"}
             height={"75%"}
             
             sx={{
@@ -76,18 +73,15 @@ function Dashboard() {
             <PieChart />
           </Box>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          textAlign: 'center',
-          padding: '1rem',
-        }}
-      >
-        <Copyright />
+        {/* <Box
+          sx={{
+            flexShrink: 0,
+            textAlign: 'center',
+            padding: '1rem',
+          }}
+        >
+          <Copyright />
+        </Box> */}
       </Box>
     </Container>
   );
