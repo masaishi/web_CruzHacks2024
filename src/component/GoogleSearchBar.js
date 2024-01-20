@@ -16,8 +16,7 @@ const GoogleSearchBar = () => {
   };
   
   return (
-    <form onSubmit={handleSubmit}>
-
+    <form /**onSubmit={handleSubmit} */>
       <TextField
         id="outlined-basic"
         label="Cruz Search"
