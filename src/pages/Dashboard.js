@@ -1,20 +1,28 @@
 'use client';
 import * as React from 'react';
-import { Avatar, CssBaseline, Box, Typography, Container } from '@mui/material';
+import {
+  Grid,
+  Avatar,
+  CssBaseline,
+  Link,
+  Box,
+  Typography,
+  Container,
+} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
+import ColoredChips from '@/components/chips';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
 
 // const defaultTheme = createTheme();
 
 function Dashboard() {
-
   return (
-    <Container >
+    <Container>
       <CssBaseline />
       <Box
         width={'100%'}
@@ -30,7 +38,7 @@ function Dashboard() {
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
           <SearchIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component='h1' variant='h5'>
           Cruz Hack 2024
         </Typography>
         <Box
@@ -55,6 +63,7 @@ function Dashboard() {
             }}
           >
             <GoogleSearchBar />
+            <ColoredChips />
           </Box>
 
           {/* Section */}
@@ -77,7 +86,6 @@ function Dashboard() {
             <PieChart />
           </Box>
         </Box>
-        
       </Box>
       <Box
         sx={{
