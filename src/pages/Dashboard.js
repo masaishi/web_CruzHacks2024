@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
+import { Google } from '@mui/icons-material';
 
 // const defaultTheme = createTheme();
 
@@ -39,11 +40,11 @@ function Dashboard() {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-around',
-            gap: '30%'
+            gap: '15%'
           }}
         >
-          <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+          <Box marginTop={5} width={'100%'} height={'75%'}>
+            <GoogleSearchBar />
           </Box>
 
           <Box width={'100%'} height={'75%'}>
