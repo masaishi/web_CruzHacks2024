@@ -72,7 +72,6 @@ function Dashboard() {
             className="component"
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
-              flex: '1',
             }}
           >
             <PieChart />

@@ -46,7 +46,7 @@ const options = {
 
 const PieChart = () => {
   return (
-    <div >
+    <div style={{ width: isMobile ? '75%' : '100%' }}>
       <Doughnut data={data} options={options} />
     </div>
   );
