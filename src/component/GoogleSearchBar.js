@@ -1,30 +1,40 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { TextField, Button, InputAdornment, Box } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import InputAdornment from '@mui/material/InputAdornment';
 
 const GoogleSearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(searchTerm);
+  })
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    router.push(`/search?q=${encodeURIComponent(searchTerm)}`);
+  };
+  
   return (
-    <TextField
-      id="outlined-basic"
-      label="Cruz Search"
-      variant="outlined"
-      fullWidth
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
-        sx: {
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          '&:hover': {
-            backgroundColor: '#f1f1f1',
-          },
-        },
-      }}
-    />
+    <form onSubmit={handleSubmit}>
+
+      <TextField
+        id="outlined-basic"
+        label="Cruz Search"
+        variant="outlined"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <Box width={0.3}>
+                <Button type="submit" variant="outlined" size="small" endIcon={<SearchIcon />} />
+              </Box>
+            </InputAdornment>
+          ),
+        }}
+      />
+    </form>
   );
 };
 
