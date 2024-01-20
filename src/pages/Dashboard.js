@@ -1,25 +1,11 @@
 'use client';
 import * as React from 'react';
-import { Grid, Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
+import { Avatar, CssBaseline, Box, Typography, Container } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import PieChart from '@/components/PieChart';
-
-function Copyright(props) {
-  return (
-    <Box marginBottom={1}>
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </Box>
-  );
-}
+import Copyright from '@/components/Copyright';
 
 // const defaultTheme = createTheme();
 
