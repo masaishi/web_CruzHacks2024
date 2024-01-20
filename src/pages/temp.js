@@ -1,7 +1,33 @@
 import ColoredChips from '../components/chips';
 import Box from '@mui/material/Box';
 
-export default function temp() {
+import Chip from '@mui/material/Chip';
+import classes from '../styles/temp.module.css';
+
+const samples = [
+  'One',
+  'Two',
+  'Three',
+  'Four',
+  'Five',
+  'Six',
+  'Seven',
+  'Eight',
+  'Nine',
+  'Ten',
+];
+
+// TODO create variable for pos/neut/neg to color. Create variables
+// in general.
+function createColoredChips(keywords) {
+  return keywords.map((keyword, index) => {
+    return <Chip key={index} label={keyword} variant='outlined' color='success' clickable />;
+  });
+}
+
+
+// TODO flexwrap in Box and space out.
+export default function Test({ res }) {
   return (
     <Box display='flex' justifyContent='center' alignContent='space'>
       <Box border='solid' borderColor='red' width='30%'>

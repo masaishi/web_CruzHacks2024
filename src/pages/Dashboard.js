@@ -3,7 +3,8 @@ import * as React from 'react';
 import { Grid, Avatar, CssBaseline, Link, Box, Typography, Container } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-import GoogleSearchBar from '@/component/GoogleSearchBar';
+import GoogleSearchBar from '@/components/GoogleSearchBar';
+import PieChart from '@/components/PieChart';
 
 function Copyright(props) {
   return (
@@ -64,7 +65,7 @@ function Dashboard() {
           </Box>
 
           <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+            <PieChart />
           </Box>
         </Box>
         
