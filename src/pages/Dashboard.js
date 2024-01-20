@@ -48,9 +48,9 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={'100%'}
-            height={'75%'}
-            className='component'
+            width={isMobile ? "80%" : "80%"}
+            height={"75%"}
+            
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
@@ -67,8 +67,8 @@ function Dashboard() {
 
           {/* PieChart */}
           <Box
-            width={isMobile ? '120%' : '100%'}
-            className='component'
+            width={isMobile ? "120%" : "100%"}
+            
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
