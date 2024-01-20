@@ -1,9 +1,8 @@
 "use client";
 import * as React from "react";
 import { Avatar, CssBaseline, Box, Typography, Container } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-
 import { isMobile } from "react-device-detect";
+import SearchIcon from "@mui/icons-material/Search";
 
 import GoogleSearchBar from "@/components/GoogleSearchBar";
 import ColoredChips from "@/components/chips"

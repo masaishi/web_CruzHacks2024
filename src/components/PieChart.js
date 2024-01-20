@@ -14,11 +14,12 @@ const data = {
 
 const colorize = (opaque, hover, ctx) => {
   const v = ctx.parsed;
-  return opaque;
+  const opacity = hover ? 0.8 : 1; // Adjust opacity based on hover condition
+  return `rgba(255, 255, 255, ${opacity})`;
 };
 
 const hoverColorize = (ctx) => {
-  return colorize(false, true, ctx);
+  return colorize(false, false, ctx);
 };
 
 const options = {
