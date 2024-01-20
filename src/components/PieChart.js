@@ -1,28 +1,22 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import {Chart, ArcElement} from 'chart.js'
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement } from "chart.js";
 Chart.register(ArcElement);
 
 const data = {
-  labels: ['Negative', 'Neutral', 'Positive'],
+  labels: ["Negative", "Neutral", "Positive"],
   datasets: [
     {
       data: [30, 20, 50],
-      backgroundColor: [
-        '#FFB3B3',
-        '#FFD699',
-        '#B3D9FF', 
-      ],
+      backgroundColor: ["#FFB3B3", "#FFD699", "#B3D9FF"],
     },
   ],
 };
 
 const colorize = (opaque, hover, ctx) => {
   const v = ctx.parsed;
-  const c = v < -50 ? '#D60000'
-    : v < 0 ? '#F46300'
-    : v < 50 ? '#0358B6'
-    : '#44DE28';
+  const c =
+    v < -50 ? "#D60000" : v < 0 ? "#F46300" : v < 50 ? "#0358B6" : "#44DE28";
 
   const opacity = hover ? 1 - Math.abs(v / 150) - 0.2 : 1 - Math.abs(v / 150);
 
@@ -35,7 +29,7 @@ const hoverColorize = (ctx) => {
 
 const options = {
   plugins: {
-    legend: false,
+    legend: true,
     tooltip: false,
   },
   elements: {

@@ -26,10 +26,11 @@ const samples = [
 // TODO create variable for pos/neut/neg to color. Create variables
 // in general.
 function createColoredChips(keywords) {
-  return keywords.map((keyword) => {
-    return <Chip label={keyword} variant='outlined' color='success' clickable/>;
+  return keywords.map((keyword, index) => {
+    return <Chip key={index} label={keyword} variant='outlined' color='success' clickable />;
   });
 }
+
 
 // TODO flexwrap in Box and space out.
 export default function Test({ res }) {
