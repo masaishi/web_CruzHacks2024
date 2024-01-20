@@ -12,7 +12,8 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
-import ColoredChips from '@/components/chips';
+import ColoredChips from '@/components/ColoredChips';
+import Post from '@/components/Post';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
 
@@ -39,7 +40,7 @@ function Dashboard() {
         <Typography component='h1' variant='h5'>
           Cruz Hack 2024
         </Typography>
-
+        <Box></Box>
         <Box
           width={'100%'}
           height={'75%'}
@@ -51,13 +52,14 @@ function Dashboard() {
             gap: 3,
           }}
         >
-          <Box marginTop={5} width={'100%'} height={'75%'}>
+          <Box marginTop={1} width={'100%'} height={'75%'} justifyContent={'left'}>
             <GoogleSearchBar />
             <ColoredChips />
           </Box>
 
           <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+            <Post />
+            <Post />
           </Box>
 
           <Box width={'100%'} height={'75%'}>

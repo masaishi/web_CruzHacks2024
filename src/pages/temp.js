@@ -1,7 +1,6 @@
-import ColoredChips from '../components/chips';
+import ColoredChips from '@/components/ColoredChips';
 import Box from '@mui/material/Box';
 
-import Chip from '@mui/material/Chip';
 import classes from '../styles/temp.module.css';
 
 const samples = [
