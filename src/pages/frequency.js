@@ -8,11 +8,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 export const getServerSideProps = async () => {
-  const response = await fetch("http://127.0.0.1:8000/word-frequency");
-  const res = await response.json();
-  return {
-    props: { res },
-  };
+	const response = await fetch("https://api-cruzhacks2024.onrender.com/word-frequency?limit=20&examples=3");
+	const res = await response.json();
+	return {
+		props: { res },
+	};
 };
 
 export default function Test({ res }) {
