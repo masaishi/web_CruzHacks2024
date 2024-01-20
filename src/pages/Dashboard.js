@@ -11,28 +11,9 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-import GoogleSearchBar from '@/component/GoogleSearchBar';
-import ColoredChips from '@/components/chips';
-
-function Copyright(props) {
-  return (
-    <Box marginBottom={1}>
-      <Typography
-        variant='body2'
-        color='text.secondary'
-        align='center'
-        {...props}
-      >
-        {'Copyright © '}
-        <Link color='inherit' href='https://mui.com/'>
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    </Box>
-  );
-}
+import GoogleSearchBar from '@/components/GoogleSearchBar';
+import PieChart from '@/components/PieChart';
+import Copyright from '@/components/Copyright';
 
 // const defaultTheme = createTheme();
 
@@ -41,12 +22,13 @@ function Dashboard() {
     <Container>
       <CssBaseline />
       <Box
+        width={'100%'}
         sx={{
           marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center', // Center the content horizontally
+          justifyContent: 'center',
           textAlign: 'center',
         }}
       >
@@ -68,8 +50,8 @@ function Dashboard() {
             gap: 3,
           }}
         >
-          <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+          <Box marginTop={5} width={'100%'} height={'75%'}>
+            <GoogleSearchBar />
             <ColoredChips />
           </Box>
 
@@ -78,7 +60,7 @@ function Dashboard() {
           </Box>
 
           <Box width={'100%'} height={'75%'}>
-            <Typography>Section </Typography>
+            <PieChart />
           </Box>
         </Box>
       </Box>
