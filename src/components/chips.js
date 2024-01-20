@@ -62,7 +62,8 @@ export default function Test({ res }) {
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'left',
-          gap: 0.5,
+          alignContent: 'space-between',
+          gap: 1,
         }}
       >
         {createColoredChips(samples)}
