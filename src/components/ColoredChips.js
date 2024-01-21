@@ -71,7 +71,7 @@ export default function ColoredChips(props) {
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        'https://api-cruzhacks2024.onrender.com/word_freq?limit=30'
+        'https://api-cruzhacks2024.onrender.com/word_freq?limit=100'
       );
       const data = await response.json();
       setData(data);
