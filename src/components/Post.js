@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Button } from '@mui/material';
 import Box from '@mui/material/Box';
 
 /**
@@ -61,10 +61,12 @@ function PostContent(post) {
 
 export default function Post(props) {
   const [clickedContent, setClickedContent] = useState(null);
-  
+  const [showMore, setShowMore] = useState(false);
+  const ResultPostContent = PostContent(props.post);
+  const MAX_LENGTH = 0.003;
+
   const handlePostClick = () => {
     setClickedContent(PostContent(props.post));
-    console.log("Clicked Content: " + clickedContent);
     props.onPostClick(clickedContent);
   };
 
@@ -80,7 +82,22 @@ export default function Post(props) {
       }
       onClick={handlePostClick}
     >
-      <Typography variant='p'>{highlight_post(props.post)}</Typography>
+      <Typography variant='p'>
+      {highlight_post(props.post)}
+      {ResultPostContent.slice(0, MAX_LENGTH)}
+      {ResultPostContent.length > MAX_LENGTH && !showMore && (
+        <>
+          {'... '}
+          <Button onClick={() => setShowMore(true)}>See More</Button>
+        </>
+      )}
+      {showMore && (
+        <>
+          {ResultPostContent}
+          <Button onClick={() => setShowMore(false)}>See Less</Button>
+        </>
+      )}
+    </Typography>
     </Box>
   );
 }
