@@ -51,7 +51,7 @@ function Dashboard() {
       setIsCommentsLoaded(false);
     }
 
-  }, [selectedWord, isCommentsLoading]);
+  }, [selectedWord]);
 
   const search = async () => {
     const response = await fetch(
