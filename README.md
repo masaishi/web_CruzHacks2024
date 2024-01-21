@@ -5,6 +5,7 @@
 web_Sitegeist is a Nextjs application. This application provides a user-friendly interface to visualize and interact with data collected from Reddit. It features components like a search bar, data visualization charts, and integration with ChatGPT for dynamic interaction.
 
 **[Live Demo](https://web-cruz-hacks2024.vercel.app/)**
+**[Initial Design / Figma](https://www.figma.com/file/13P6GwI9DUAjRbJgJ40lPy/CruzHacks2024?type=design&node-id=0%3A1&mode=design&t=PWgJAPwbHJR6uUWK-1)**
 
 ## Features
 
