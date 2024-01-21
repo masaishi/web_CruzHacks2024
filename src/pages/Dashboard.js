@@ -12,6 +12,7 @@ import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
 import YellowSlugLoader from '@/components/YellowSlugLoader';
 import AskGPT from '@/components/AskGPT';
+import yellow_slug from '@/assets/yellow_slug.json';
 
 // const defaultTheme = createTheme();
 
@@ -19,12 +20,11 @@ function Dashboard() {
   const [selectedWord, setSelectedWord] = useState('');
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
-  const content = 'Hi, how are you';
   const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
   
   const handleContentClick = (clickedContentDashboard) => {
     setClickedContentDashboard(clickedContentDashboard);
-    // console.log(clickedContentDashboard);
+    console.log(clickedContentDashboard);
   };
 
   useEffect(() => {

@@ -1,8 +1,9 @@
 import { Box, Button } from '@mui/material';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function AskGPT(Prompt) {
   const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const callChatGPT = async () => {
     try {
@@ -23,16 +24,26 @@ function AskGPT(Prompt) {
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
-  };
+  };useEffect(() => {
+    // Call ChatGPT when the component mounts
+    callChatGPT();
+  }, []);
 
   return (
     <Box>
-      <Button onClick={callChatGPT}>Call ChatGPT</Button>
-      {content && (
-        <Box>
-          Content: {content}
-        </Box>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          {content && (
+            <Box>
+              Content: {content}
+            </Box>
+          )}
+        </>
       )}
     </Box>
   );
