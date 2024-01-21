@@ -103,10 +103,10 @@ function Dashboard() {
             height={'80%'}
             mt={5}
             maxWidth={'27.5vw'}
-            // maxHeight={'60vh'}
             display={'flex'}
             flexDirection={'column'}
             justifyContent={'center'}
+            // maxHeight={'60vh'}
             // overflow={'scroll'}
             // overflowX={'hidden'}
             // className='component'
