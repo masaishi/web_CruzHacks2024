@@ -7,11 +7,11 @@ import { isMobile } from 'react-device-detect';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/ColoredChips';
-import Post from '@/components/Post';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
 import YellowSlugLoader from '@/components/YellowSlugLoader';
+import AskGPT from '@/components/AskGPT';
 
 // const defaultTheme = createTheme();
 
@@ -19,6 +19,13 @@ function Dashboard() {
   const [selectedWord, setSelectedWord] = useState('');
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
+  const content = 'Hi, how are you';
+  const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
+  
+  const handleContentClick = (clickedContentDashboard) => {
+    setClickedContentDashboard(clickedContentDashboard);
+    // console.log(clickedContentDashboard);
+  };
 
   useEffect(() => {
     console.log(selectedWord);
@@ -91,6 +98,7 @@ function Dashboard() {
 
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
+            <PostColumn clickedContentDashboard={handleContentClick} />
             { isCommentsLoading || comments.length === 0 ? (
               <YellowSlugLoader />
             ) : (
@@ -107,6 +115,8 @@ function Dashboard() {
             }}
           >
             <PieChart />
+            
+            <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>
       </Box>
@@ -120,7 +130,7 @@ function Dashboard() {
           padding: '1rem',
         }}
       >
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
     </Container>
   );
