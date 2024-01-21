@@ -7,14 +7,14 @@ import { isMobile } from 'react-device-detect';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/ColoredChips';
-import Post from '@/components/Post';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
+import AskGPT from '@/components/AskGPT';
 
-// const defaultTheme = createTheme();
 
 function Dashboard() {
+  const content = 'Hi, how are you';
   return (
     <Container>
       <CssBaseline />
@@ -73,6 +73,8 @@ function Dashboard() {
             }}
           >
             <PieChart />
+            
+            <AskGPT content/>
           </Box>
         </Box>
       </Box>
