@@ -111,6 +111,14 @@ function Dashboard() {
             <ColoredChips setSelectedWord={setSelectedWord} />
           </Box>
 
+          {/*     <Box
+      boxShadow={
+        'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px'
+      }
+      outline={'solid'}
+      outlineColor={'#f5f9ff'}
+    > */}
+
           {/* Posts */}
           <Box width={'100%'} height={'100%'} className='component' mt='2.5rem'>
             <Typography component='h1' variant='h5'>
@@ -118,7 +126,10 @@ function Dashboard() {
                 ? 'Selected `' + selectedWord['word'] + '`'
                 : 'Please select a word'}
             </Typography>
-            <Box height={'100vh'} sx={{ overflowY: 'auto', mt: '1.5rem' }}>
+            <Box
+              height={'130vh'}
+              sx={{ overflowY: 'auto', mt: '1.5rem' }}
+            >
               {isCommentsLoading || comments.length === 0 ? (
                 <Box
                   display={'flex'}
@@ -146,10 +157,10 @@ function Dashboard() {
               mt: '3rem',
             }}
           >
-            <Box sx={{mb:'3rem'}}>
+            <Box sx={{ mb: '3rem' }}>
               <PieChart selectedWord={selectedWord} />
             </Box>
-
+            <Typography component='h1' variant='h5'>Suggestions</Typography>
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>
