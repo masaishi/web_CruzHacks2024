@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Box, Typography } from '@mui/material';
 import yellow_slug from '@/assets/yellow_slug.json';
 import Lottie from "lottie-react";
@@ -7,7 +7,7 @@ function AskGPT(Prompt) {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const callChatGPT = async () => {
+  const callChatGPT = useCallback(async () => {
     try {
       const promptString = JSON.stringify(Prompt).toString();
         const apiUrl = `https://api-cruzhacks2024.onrender.com/chatgpt?input=(Find%20a%20solution%20to%20issues:%20${promptString})}&prompt=You%20are%20good%20at%20finding%20an%20solution%20to%20issues.`;
@@ -28,20 +28,23 @@ function AskGPT(Prompt) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [Prompt]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-    }, 5000);
-    if (typeof Prompt === 'object' && Prompt !== null && (JSON.stringify(Prompt).includes('null'))) {
-      console.log(JSON.stringify(Prompt).toString());
-    } else {
-      console.log("Calling API");
-      callChatGPT();
+    const fetchData = async () => {
+      const timeout = setTimeout(() => {
+      }, 5000);
+      if (typeof Prompt === 'object' && Prompt !== null && (JSON.stringify(Prompt).includes('null'))) {
+        console.log(JSON.stringify(Prompt).toString());
+      } else {
+        console.log("Calling API");
+        await callChatGPT();
+      }
+      return () => clearTimeout(timeout);
     }
+    fetchData();
+  }, [Prompt, callChatGPT]);
 
-    return () => clearTimeout(timeout);
-  }, [Prompt]);
 
   return (
     <Box>
