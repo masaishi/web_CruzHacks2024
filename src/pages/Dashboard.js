@@ -1,20 +1,16 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
+
 import { Avatar, CssBaseline, Box, Typography, Container } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-
-import { isMobile } from 'react-device-detect';
 
 import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/ColoredChips';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
-import Copyright from '@/components/Copyright';
 import YellowSlugLoader from '@/components/YellowSlugLoader';
 import AskGPT from '@/components/AskGPT';
-import yellow_slug from '@/assets/yellow_slug.json';
-
-// const defaultTheme = createTheme();
 
 function Dashboard() {
   const [searchWord, setSearchWord] = useState('');
@@ -82,7 +78,8 @@ function Dashboard() {
           Cruz Hack 2024
         </Typography>
         <Box
-          width={isMobile ? '70%' : '110%'}
+        marginLeft={5} //FIXME
+          width={isMobile ? '70%' : '100%'}
           marginTop={5}
           className='flex-container'
           sx={{
@@ -91,6 +88,7 @@ function Dashboard() {
             gap: '5%',
           }}
         >
+
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
