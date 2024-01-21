@@ -23,7 +23,7 @@ function putKeywordIntoList(data) {
   return keywords;
 }
 
-function createColoredChips(keywords) {
+function createColoredChips(keywords, setSelectedWord) {
   let chip_color = [];
   let colored_chips = [];
 
@@ -47,7 +47,7 @@ function createColoredChips(keywords) {
         label={keywords[i]}
         variant='outlined'
         color={chip_color[i]}
-        onClick={() => console.log('clicked')}
+        onClick={() => setSelectedWord(keywords[i])}
         clickable
       />
     );
@@ -55,7 +55,7 @@ function createColoredChips(keywords) {
   return colored_chips;
 }
 
-export default function ColoredChips() {
+export default function ColoredChips(props) {
   const [data, setData] = useState([]);
   const [keywords, setKeywords] = useState([]);
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function ColoredChips() {
           gap: 1,
         }}
       >
-        {createColoredChips(keywords)}
+        {createColoredChips(keywords, props.setSelectedWord)}
       </Box>
     </Box>
   );
