@@ -17,7 +17,7 @@ import yellow_slug from '@/assets/yellow_slug.json';
 // const defaultTheme = createTheme();
 
 function Dashboard() {
-  const [selectedWord, setSelectedWord] = useState('');
+  const [selectedWord, setSelectedWord] = useState({});
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
   const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
@@ -28,8 +28,8 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    console.log(selectedWord);
-    if (selectedWord === '') {
+    console.log("selectedWord", selectedWord);
+    if (selectedWord.length === 0) {
       return;
     }
     if (isCommentsLoading) {
@@ -39,17 +39,17 @@ function Dashboard() {
     try {
       (async () => {
         const response = await fetch(
-          `https://api-cruzhacks2024.onrender.com/examples/${selectedWord}`
+          `https://api-cruzhacks2024.onrender.com/examples/${selectedWord['word']}`
         );
         const data = await response.json();
         setComments(data['examples']);
+
+		setIsCommentsLoaded(false);
       })();
     } catch (error) {
       console.log(error);
       setIsCommentsLoaded(false);
       }
-    
-    setIsCommentsLoaded(false);
   }, [selectedWord]);
 
   return (
@@ -114,7 +114,7 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-            <PieChart />
+			<PieChart selectedWord={selectedWord} />
             
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>

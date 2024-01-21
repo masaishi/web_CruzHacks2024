@@ -6,6 +6,7 @@ function AskGPT(Prompt) {
   const [loading, setLoading] = useState(true);
 
   const callChatGPT = async () => {
+	console.log("callChatGPT");
     try {
       const apiUrl = `https://api-cruzhacks2024.onrender.com/chatgpt?input=Find a solution to issue: ${Prompt}&prompt=You%20are%20a%20poetic%20assistant%2C%20skilled%20in%20explaining%20complex%20programming%20concepts%20with%20creative%20flair.`;
       const response = await fetch(apiUrl, {
