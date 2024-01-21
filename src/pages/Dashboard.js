@@ -86,7 +86,7 @@ function Dashboard() {
           padding: '1rem',
         }}
       >
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
     </Container>
   );
