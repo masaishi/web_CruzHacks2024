@@ -105,12 +105,32 @@ function Dashboard() {
           </Box>
 
           {/* Posts */}
-          <Box width={'100%'} height={'75%'} className='component'>
+          <Box
+            // outline={'double'}
+            width={'100%'}
+            height={'80%'}
+            mt={5}
+            maxWidth={'27.5vw'}
+            // maxHeight={'60vh'}
+            display={'flex'}
+            flexDirection={'column'}
+            justifyContent={'center'}
+            // overflow={'scroll'}
+            // overflowX={'hidden'}
+            // className='component'
+          >
             <Typography component='h1' variant='h5'>
                 {selectedWord['word'] ? "Selected `" + selectedWord['word'] + "`" : 'Please select a word'}
             </Typography>
-            { isCommentsLoading || comments.length === 0 ? (
-              <YellowSlugLoader />
+            {isCommentsLoading || comments.length === 0 ? (
+              <Box
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+                gap={3}
+              >
+                <YellowSlugLoader />
+              </Box>
             ) : (
               <PostColumn comments={comments} clickedContentDashboard={handleContentClick}/>
             )}
