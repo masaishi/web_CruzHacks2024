@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 
 function AskGPT(Prompt) {
   const [content, setContent] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const callChatGPT = async () => {
     try {
