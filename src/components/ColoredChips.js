@@ -31,7 +31,7 @@ function calculateAvgSentiment(element) {
   return sentiment;
 }
 
-function createColoredChips(data, keywords) {
+function createColoredChips(data, keywords, setSelectedWord) {
   let chip_color = [];
   let colored_chips = [];
   let sentiment = 'neutral';
@@ -57,7 +57,7 @@ function createColoredChips(data, keywords) {
         label={keywords[i]}
         variant='outlined'
         color={chip_color[i]}
-        onClick={() => console.log('clicked')}
+        onClick={() => setSelectedWord(keywords[i])}
         clickable
       />
     );
@@ -65,7 +65,7 @@ function createColoredChips(data, keywords) {
   return colored_chips;
 }
 
-export default function ColoredChips() {
+export default function ColoredChips(props) {
   const [data, setData] = useState([]);
   const [keywords, setKeywords] = useState([]);
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function ColoredChips() {
           gap: 1,
         }}
       >
-        {createColoredChips(data, keywords)}
+        {createColoredChips(data, keywords, props.setSelectedWord)}
       </Box>
     </Box>
   );
