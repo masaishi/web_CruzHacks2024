@@ -9,6 +9,7 @@ import GoogleSearchBar from '@/components/GoogleSearchBar';
 import ColoredChips from '@/components/ColoredChips';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
+import MixedBarChart from '@/components/MixedBarChart';
 import Copyright from '@/components/Copyright';
 
 function Dashboard() {
@@ -71,6 +72,7 @@ function Dashboard() {
             }}
           >
             <PieChart />
+            {/* <MixedBarChart /> */}
           </Box>
         </Box>
         {/* <Box
