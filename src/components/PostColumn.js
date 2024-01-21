@@ -15,5 +15,17 @@ export default function PostColumn(props) {
     );
   });
 
-  return <Box>{posts}</Box>;
+  return (
+    <Box
+      width={'100%'}
+      // height={'80%'}
+      maxWidth={'28vw'}
+      // maxHeight={'60vh'}
+      display={'flex'}
+      flexDirection={'column'}
+      justifyContent={'center'}
+    >
+      {posts}
+    </Box>
+  );
 }
