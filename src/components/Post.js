@@ -25,7 +25,7 @@ function trim_post(post) {
 
 function highlight_sentence(sentence_text, sentiment, sentence_id) {
   let text_color = 'black';
-  switch (sentiment_map[sentiment]) {
+  switch (sentiment) {
     case 'positive':
       text_color = 'green';
       break;
@@ -47,12 +47,7 @@ function highlight_post(post) {
   let colored_post = [];
 
   post.forEach((sentence) => {
-    const sentence_id = sentence[0];
-    const sentiment = sentence[1];
-    const sentiment_score = sentence[2];
-    const sentence_text = sentence[3] + ' ';
-
-    colored_post.push(highlight_sentence(sentence_text, sentiment, sentence_id));
+    colored_post.push(highlight_sentence(sentence['text'], sentence['label'], "post" + sentence['sentence_id'] + sentence['comment_id']));
   });
 
   return colored_post;
