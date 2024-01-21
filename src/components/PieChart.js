@@ -5,10 +5,10 @@ import { isMobile } from "react-device-detect";
 
 Chart.register(ArcElement);
 
-const data = {
+const defaultData = {
   labels: ["Negative", "Neutral", "Positive"],
   datasets: [
-    { data: [30, 20, 50], backgroundColor: ["#FFB3B3", "#FFD699", "#B3D9FF"] },
+    { data: [0, 100, 0], backgroundColor: ["#FFB3B3", "#FFD699", "#B3D9FF"] },
   ],
 };
 
@@ -34,10 +34,27 @@ const options = {
   },
 };
 
-const PieChart = () => {
+const PieChart = (props) => {
+  let data = props.selectedWord;
+  if (Object.keys(data).length === 0) {
+	return (
+	  <div style={{ width: isMobile ? "75%" : "100%" }}>
+		<Doughnut data={defaultData} options={options} />
+	  </div>
+	);
+  }
+  console.log("after data", data);
+  let positive_freq = data['positive_freq'] / (data['positive_freq'] + data['negative_freq']) * 100
+  let negative_freq = data['negative_freq'] / (data['positive_freq'] + data['negative_freq']) * 100
+  let doughnut_data = {
+	labels: ["Negative", "Neutral", "Positive"],
+	datasets: [
+		{ data: [positive_freq, 0, negative_freq], backgroundColor: ["#FFB3B3", "#FFD699", "#B3D9FF"] },
+	],
+};
   return (
     <div style={{ width: isMobile ? "75%" : "100%" }}>
-      <Doughnut data={data} options={options} />
+      <Doughnut data={doughnut_data} />
     </div>
   );
 };
