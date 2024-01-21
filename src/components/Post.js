@@ -77,7 +77,8 @@ export default function Post(props) {
     <Box
       w={'100%'}
       my={1}
-      p={'0.5rem'}
+      px={'0.5rem'}
+      py={'2rem'}
       borderRadius={2}
       bgcolor={'#f5f9ff'}
       boxShadow={
