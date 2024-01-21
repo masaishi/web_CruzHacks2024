@@ -1,4 +1,7 @@
+<img width="675" alt="Screenshot 2024-01-21 at 3 04 43 AM" src="https://github.com/masaishi/web_CruzHacks2024/assets/1396267/32bb163f-657a-4ed8-a762-a21a47dd58e2">
+
 # CruzHacks2024
+
 <p align="center">
   <a aria-label="Vercel logo" href="https://vercel.com">
     <img src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000">
