@@ -11,9 +11,7 @@ import Post from '@/components/Post';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
-
-import Lottie from 'react-lottie';
-import yellow_slug from '@/assets/yellow_slug.json';
+import YellowSlugLoader from '@/components/YellowSlugLoader';
 
 // const defaultTheme = createTheme();
 
@@ -46,15 +44,6 @@ function Dashboard() {
     
     setIsCommentsLoaded(false);
   }, [selectedWord]);
-
-  const yellowSlugOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: yellow_slug,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
 
   return (
     <Container>
@@ -103,12 +92,7 @@ function Dashboard() {
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
             { isCommentsLoading || comments.length === 0 ? (
-              <Lottie
-                options={yellowSlugOptions}
-                width={isMobile ? '100%' : '100%'}
-                height={isMobile ? '100%' : '100%'}
-                className="flex justify-center items-center"
-              />
+              <YellowSlugLoader />
             ) : (
               <PostColumn comments={comments} />
             )}
