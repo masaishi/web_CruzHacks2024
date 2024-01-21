@@ -10,7 +10,7 @@ export default function PostColumn(props) {
       <Post
         key={post['post_id'] + post['comment_id']}
         post={post}
-        clickedContentDashboard={props.clickedContentDashboard}
+        onPostClick={props.clickedContentDashboard} // Pass the prop here
       />
     );
   });

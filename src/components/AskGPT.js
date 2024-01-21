@@ -1,47 +1,63 @@
-import { Box, Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Box, Typography } from '@mui/material';
+import yellow_slug from '@/assets/yellow_slug.json';
+import Lottie from "lottie-react";
 
 function AskGPT(Prompt) {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const callChatGPT = async () => {
-	console.log("callChatGPT");
     try {
-      const apiUrl = `https://api-cruzhacks2024.onrender.com/chatgpt?input=Find a solution to issue: ${Prompt}&prompt=You%20are%20a%20poetic%20assistant%2C%20skilled%20in%20explaining%20complex%20programming%20concepts%20with%20creative%20flair.`;
-      const response = await fetch(apiUrl, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const promptString = JSON.stringify(Prompt).toString();
+      // if (promptString != '[object Object]' && typeof promptString === 'string' && promptString !== '') {
+        const apiUrl = `https://api-cruzhacks2024.onrender.com/chatgpt?input=(Find%20a%20solution%20to%20issues:%20${promptString})}&prompt=You%20are%20good%20at%20finding%20an%20solution%20to%20issues.`;
+        console.log(apiUrl);
+        const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: {'Content-Type': 'application/json'}
+        });
 
-      if (response.ok) {
-        const data = await response.json();
-        // Extract the content from the response
-        setContent(data.message.content);
-      } else {
-        console.error('Error:', response.statusText);
-      }
+        if (response.ok) {
+          const data = await response.json();
+          setContent(data.message.content);
+        } else {
+          console.error('Error:', response.statusText);
+        }
+      // }
     } catch (error) {
       console.error('Error:', error);
     } finally {
       setLoading(false);
     }
-  };useEffect(() => {
-    // Call ChatGPT when the component mounts
-    callChatGPT();
-  }, []);
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+    }, 5000);
+    if (typeof Prompt === 'object' && Prompt !== null && (JSON.stringify(Prompt).includes('null'))) {
+      console.log(JSON.stringify(Prompt).toString());
+    } else {
+      console.log("Calling API");
+      callChatGPT();
+    }
+
+    return () => clearTimeout(timeout);
+  }, [Prompt]);
 
   return (
     <Box>
       {loading ? (
-        <p>Loading...</p>
+        <Lottie
+          animationData={yellow_slug}
+          className="flex justify-center items-center"
+          loop={true}
+        />
       ) : (
         <>
           {content && (
             <Box>
-              Content: {content}
+              {content}
             </Box>
           )}
         </>

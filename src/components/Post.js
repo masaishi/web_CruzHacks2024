@@ -54,10 +54,8 @@ function PostContent(post) {
   let ResultPostContent = [];
 
   post.forEach((sentence) => {
-    const sentence_text = sentence['text'] + ' ';
-    ResultPostContent.push(sentence_text);
+    ResultPostContent.push(sentence['text'] + ' ');
   });
-  // console.log(sentence_text);
   return ResultPostContent;
 }
 
@@ -65,12 +63,9 @@ export default function Post(props) {
   const [clickedContent, setClickedContent] = useState(null);
   
   const handlePostClick = () => {
-    console.log("Clicked");
     setClickedContent(PostContent(props.post));
-    console.log(clickedContent);
-    if (typeof props.clickedContentDashboard === 'function') {
-      props.clickedContentDashboard(clickedContent);
-    }
+    console.log("Clicked Content: " + clickedContent);
+    props.onPostClick(clickedContent);
   };
 
   return (
