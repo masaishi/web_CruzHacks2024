@@ -21,7 +21,7 @@ function Dashboard() {
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
   const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
-  
+
   const handleContentClick = (clickedContentDashboard) => {
     setClickedContentDashboard(clickedContentDashboard);
     console.log(clickedContentDashboard);
@@ -49,6 +49,9 @@ function Dashboard() {
     } catch (error) {
       console.log(error);
       setIsCommentsLoaded(false);
+    }
+
+    setIsCommentsLoaded(false);
       }
   }, [selectedWord]);
 
@@ -85,9 +88,8 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={isMobile ? "80%" : "80%"}
-            height={"75%"}
-            
+            width={isMobile ? '80%' : '80%'}
+            height={'75%'}
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
@@ -97,19 +99,41 @@ function Dashboard() {
           </Box>
 
           {/* Posts */}
-          <Box width={'100%'} height={'75%'} className='component'>
-            <PostColumn clickedContentDashboard={handleContentClick} />
-            { isCommentsLoading || comments.length === 0 ? (
-              <YellowSlugLoader />
+          <Box
+            // outline={'double'}
+            width={'100%'}
+            height={'80%'}
+            mt={5}
+            maxWidth={'27.5vw'}
+            // maxHeight={'60vh'}
+            display={'flex'}
+            flexDirection={'column'}
+            justifyContent={'center'}
+            // overflow={'scroll'}
+            // overflowX={'hidden'}
+            // className='component'
+          >
+            {isCommentsLoading || comments.length === 0 ? (
+              <Box
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+                gap={3}
+              >
+                <h2>Please select a word</h2>
+                <YellowSlugLoader />
+              </Box>
             ) : (
-              <PostColumn comments={comments} />
+              <PostColumn
+                comments={comments}
+                clickedContentDashboard={handleContentClick}
+              />
             )}
           </Box>
 
           {/* PieChart */}
           <Box
-            width={isMobile ? "100%" : "100%"}
-            
+            width={isMobile ? '100%' : '100%'}
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
