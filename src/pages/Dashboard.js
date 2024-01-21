@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+import React, { useState } from 'react'
 import { Avatar, CssBaseline, Box, Typography, Container } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -15,6 +15,12 @@ import AskGPT from '@/components/AskGPT';
 
 function Dashboard() {
   const content = 'Hi, how are you';
+  const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
+  
+  const handleContentClick = (clickedContentDashboard) => {
+    setClickedContentDashboard(clickedContentDashboard);
+    // console.log(clickedContentDashboard);
+  };
   return (
     <Container>
       <CssBaseline />
@@ -61,7 +67,7 @@ function Dashboard() {
 
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
-            <PostColumn />
+            <PostColumn clickedContentDashboard={handleContentClick} />
           </Box>
 
           {/* PieChart */}
@@ -74,7 +80,7 @@ function Dashboard() {
           >
             <PieChart />
             
-            <AskGPT content/>
+            <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>
       </Box>

@@ -4,7 +4,10 @@ import dummy_data from '@/temp/message.json';
 
 export default function PostColumn(props) {
   const posts = dummy_data.map((post) => {
-    return <Post post={post['sentences']} />;
+    return <Post
+              post={post['sentences']}
+              clickedContentDashboard={props.clickedContentDashboard}
+            />
   });
 
   return <Box>{posts}</Box>;
