@@ -19,9 +19,13 @@ let sentiment_map = {
   disgust: 'negative',
 };
 
+function trim_post(post) {
+    
+}
+
 function highlight_sentence(sentence_text, sentiment) {
   let text_color = 'black';
-  switch (sentiment_map(sentiment)) {
+  switch (sentiment_map[sentiment]) {
     case 'positive':
       text_color = 'green';
       break;
@@ -43,10 +47,10 @@ function highlight_post(post) {
   let colored_post = [];
 
   post.forEach((sentence) => {
-    sentence_id = first_sentence[0];
-    sentiment = first_sentence[1];
-    sentiment_score = first_sentence[2];
-    sentence_text = first_sentence[3];
+    const sentence_id = sentence[0];
+    const sentiment = sentence[1];
+    const sentiment_score = sentence[2];
+    const sentence_text = sentence[3] + ' ';
 
     colored_post.push(highlight_sentence(sentence_text, sentiment));
   });
@@ -66,12 +70,7 @@ export default function Post(props) {
         'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px'
       }
     >
-      {/* <Typography variant='p'>{highlight_post(props.post)}</Typography> */}
-      <p>
-        This is a sentence about being frikn awesome. What else can I say, the
-        frikn awesomness runs through my veins, within the spirits of my
-        ancestors.
-      </p>
+      <Typography variant='p'>{highlight_post(props.post)}</Typography>
     </Box>
   );
 }

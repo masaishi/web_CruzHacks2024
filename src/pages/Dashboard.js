@@ -62,7 +62,6 @@ function Dashboard() {
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
             <PostColumn />
-
           </Box>
 
           {/* PieChart */}
