@@ -24,7 +24,6 @@ function Dashboard() {
   
   const handleContentClick = (clickedContentDashboard) => {
     setClickedContentDashboard(clickedContentDashboard);
-    console.log(clickedContentDashboard);
   };
 
   useEffect(() => {
@@ -98,11 +97,11 @@ function Dashboard() {
 
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
-            <PostColumn clickedContentDashboard={handleContentClick} />
+            {/* <PostColumn clickedContentDashboard={handleContentClick} /> */}
             { isCommentsLoading || comments.length === 0 ? (
               <YellowSlugLoader />
             ) : (
-              <PostColumn comments={comments} />
+              <PostColumn comments={comments} clickedContentDashboard={handleContentClick}/>
             )}
           </Box>
 
@@ -114,7 +113,7 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-			<PieChart selectedWord={selectedWord} />
+			      <PieChart selectedWord={selectedWord} />
             
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
