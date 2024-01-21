@@ -59,10 +59,24 @@ function Dashboard() {
   return (
     <Container>
       <CssBaseline />
+      <Box pt={5} display={'flex'} flexDirection={'row'} alignItems={'center'}>
+        <Box ml={'4rem'}>
+          <Avatar
+            alt='Sitegeist Logo'
+            src='https://web-cruz-hacks2024.vercel.app/Sitegeist_icon.png'
+            sx={{
+              width: '3.5rem',
+              height: '3.5rem',
+            }}
+          />
+        </Box>
+        <Typography component='h1' variant='h5' sx={{ ml: '1.5rem' }}>
+          Sitegeist
+        </Typography>
+      </Box>
       <Box
         width={'100%'}
         sx={{
-          marginTop: 8,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -70,17 +84,9 @@ function Dashboard() {
           textAlign: 'center',
         }}
       >
-        <Avatar
-          alt='Sitegeist Logo'
-          src='https://web-cruz-hacks2024.vercel.app/Sitegeist_icon.png'
-        />
-        <Typography component='h1' variant='h5'>
-          Sitegeist
-        </Typography>
         <Box
-        marginLeft={5} //FIXME
+          marginLeft={5} //FIXME
           width={isMobile ? '70%' : '100%'}
-          marginTop={5}
           className='flex-container'
           sx={{
             display: 'flex',
@@ -88,7 +94,6 @@ function Dashboard() {
             gap: '5%',
           }}
         >
-
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
@@ -107,28 +112,30 @@ function Dashboard() {
           </Box>
 
           {/* Posts */}
-          <Box width={'100%'} height={'100vh'} className='component' sx={{ overflowY: 'auto' }}>
+          <Box width={'100%'} height={'100%'} className='component' mt='2.5rem'>
             <Typography component='h1' variant='h5'>
               {selectedWord['word']
                 ? 'Selected `' + selectedWord['word'] + '`'
                 : 'Please select a word'}
             </Typography>
-            {isCommentsLoading || comments.length === 0 ? (
-              <Box
-                display={'flex'}
-                flexDirection={'column'}
-                alignItems={'center'}
-                pt={5}
-                gap={3}
-              >
-                <YellowSlugLoader />
-              </Box>
-            ) : (
-              <PostColumn
-                comments={comments}
-                clickedContentDashboard={handleContentClick}
-              />
-            )}
+            <Box height={'100vh'} sx={{ overflowY: 'auto', mt: '1.5rem' }}>
+              {isCommentsLoading || comments.length === 0 ? (
+                <Box
+                  display={'flex'}
+                  flexDirection={'column'}
+                  alignItems={'center'}
+                  pt={5}
+                  gap={3}
+                >
+                  <YellowSlugLoader />
+                </Box>
+              ) : (
+                <PostColumn
+                  comments={comments}
+                  clickedContentDashboard={handleContentClick}
+                />
+              )}
+            </Box>
           </Box>
 
           {/* PieChart */}
@@ -136,6 +143,7 @@ function Dashboard() {
             width={isMobile ? '100%' : '100%'}
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
+              mt: '3rem',
             }}
           >
             <PieChart selectedWord={selectedWord} />

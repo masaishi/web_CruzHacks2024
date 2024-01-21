@@ -17,7 +17,7 @@ export default function YellowSlugLoader() {
       border={'double'}
       borderColor={'yellow'}
       height={'11rem'}
-      // width={'11rem'}
+      width={'11rem'}
       borderRadius={'50%'}
       overflow={'hidden'}
 	  pb={5.5}
