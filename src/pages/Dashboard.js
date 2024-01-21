@@ -21,7 +21,7 @@ function Dashboard() {
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
   const [clickedContentDashboard, setClickedContentDashboard] = useState(null);
-  
+
   const handleContentClick = (clickedContentDashboard) => {
     setClickedContentDashboard(clickedContentDashboard);
     console.log(clickedContentDashboard);
@@ -47,8 +47,8 @@ function Dashboard() {
     } catch (error) {
       console.log(error);
       setIsCommentsLoaded(false);
-      }
-    
+    }
+
     setIsCommentsLoaded(false);
   }, [selectedWord]);
 
@@ -85,9 +85,8 @@ function Dashboard() {
           {/* GoogleSearchBar */}
           <Box
             marginTop={5}
-            width={isMobile ? "80%" : "80%"}
-            height={"75%"}
-            
+            width={isMobile ? '80%' : '80%'}
+            height={'75%'}
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
@@ -97,10 +96,20 @@ function Dashboard() {
           </Box>
 
           {/* Posts */}
-          <Box width={'100%'} height={'75%'} className='component'>
+          <Box
+            width={'100%'}
+            height={'75%'}
+            display={'flex'}
+            flexDirection={'column'}
+            justifyContent={'center'}
+            className='component'
+          >
             <PostColumn clickedContentDashboard={handleContentClick} />
-            { isCommentsLoading || comments.length === 0 ? (
-              <YellowSlugLoader />
+            {isCommentsLoading || comments.length === 0 ? (
+              <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={3}>
+                <h2>Please select a word</h2>
+                <YellowSlugLoader />
+              </Box>
             ) : (
               <PostColumn comments={comments} />
             )}
@@ -108,14 +117,13 @@ function Dashboard() {
 
           {/* PieChart */}
           <Box
-            width={isMobile ? "100%" : "100%"}
-            
+            width={isMobile ? '100%' : '100%'}
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
             <PieChart />
-            
+
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>

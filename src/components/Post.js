@@ -35,7 +35,7 @@ function highlight_sentence(sentence_text, sentiment, sentence_id) {
   }
   return (
     <Typography key={sentence_id} color={text_color} display={'inline'}>
-      {sentence_text}
+      {sentence_text}{' '}
     </Typography>
   );
 }
