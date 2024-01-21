@@ -17,6 +17,7 @@ import yellow_slug from '@/assets/yellow_slug.json';
 // const defaultTheme = createTheme();
 
 function Dashboard() {
+  const [searchWord, setSearchWord] = useState('');
   const [selectedWord, setSelectedWord] = useState({});
   const [isCommentsLoading, setIsCommentsLoaded] = useState(false);
   const [comments, setComments] = useState([]);
@@ -50,6 +51,14 @@ function Dashboard() {
       setIsCommentsLoaded(false);
       }
   }, [selectedWord]);
+
+  const search = async () => {
+    const response = await fetch(
+      `https://api-cruzhacks2024.onrender.com/word/${searchWord}`
+    );
+    const data = await response.json();
+    setSelectedWord(data);
+  }
 
   return (
     <Container>
@@ -91,13 +100,15 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-            <GoogleSearchBar />
+            <GoogleSearchBar search={search} searchWord={searchWord} setSearchWord={setSearchWord} />
             <ColoredChips setSelectedWord={setSelectedWord} />
           </Box>
 
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
-            {/* <PostColumn clickedContentDashboard={handleContentClick} /> */}
+            <Typography component='h1' variant='h5'>
+                {selectedWord['word'] ? "Selected `" + selectedWord['word'] + "`" : 'Please select a word'}
+            </Typography>
             { isCommentsLoading || comments.length === 0 ? (
               <YellowSlugLoader />
             ) : (
