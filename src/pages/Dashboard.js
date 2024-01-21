@@ -28,7 +28,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    console.log("selectedWord", selectedWord);
+    console.log('selectedWord', selectedWord);
     if (selectedWord.length === 0) {
       return;
     }
@@ -44,15 +44,13 @@ function Dashboard() {
         const data = await response.json();
         setComments(data['examples']);
 
-		setIsCommentsLoaded(false);
+        setIsCommentsLoaded(false);
       })();
     } catch (error) {
       console.log(error);
       setIsCommentsLoaded(false);
     }
 
-    setIsCommentsLoaded(false);
-      }
   }, [selectedWord]);
 
   return (
@@ -138,8 +136,8 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-			<PieChart selectedWord={selectedWord} />
-            
+            <PieChart selectedWord={selectedWord} />
+
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>
