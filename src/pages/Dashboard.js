@@ -97,21 +97,34 @@ function Dashboard() {
 
           {/* Posts */}
           <Box
+            // outline={'double'}
             width={'100%'}
-            height={'75%'}
+            height={'80%'}
+            mt={5}
+            maxWidth={'27.5vw'}
+            // maxHeight={'60vh'}
             display={'flex'}
             flexDirection={'column'}
             justifyContent={'center'}
-            className='component'
+            // overflow={'scroll'}
+            // overflowX={'hidden'}
+            // className='component'
           >
-            <PostColumn clickedContentDashboard={handleContentClick} />
             {isCommentsLoading || comments.length === 0 ? (
-              <Box display={'flex'} flexDirection={'column'} alignItems={'center'} gap={3}>
+              <Box
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+                gap={3}
+              >
                 <h2>Please select a word</h2>
                 <YellowSlugLoader />
               </Box>
             ) : (
-              <PostColumn comments={comments} />
+              <PostColumn
+                comments={comments}
+                clickedContentDashboard={handleContentClick}
+              />
             )}
           </Box>
 
