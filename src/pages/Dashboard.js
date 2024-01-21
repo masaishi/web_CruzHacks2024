@@ -146,7 +146,9 @@ function Dashboard() {
               mt: '3rem',
             }}
           >
-            <PieChart selectedWord={selectedWord} />
+            <Box sx={{mb:'3rem'}}>
+              <PieChart selectedWord={selectedWord} />
+            </Box>
 
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
