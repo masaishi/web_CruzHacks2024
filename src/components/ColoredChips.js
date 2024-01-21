@@ -16,14 +16,15 @@ function calculateAvgSentiment(element) {
   let total_num = 0;
   let sentiment = '';
 
-  total_num += element['neutral_num'];
   total_num += element['positive_num'];
   total_num += element['negative_num'];
   let positive_ratio = element['positive_num'] / total_num;
   let negative_ratio = element['negative_num'] / total_num;
   let max_ratio = Math.max(positive_ratio, negative_ratio);
 
-  if (max_ratio == positive_ratio) {
+  console.log('positive_ratio:', positive_ratio);
+  console.log('negative_ratio:', negative_ratio);
+  if (max_ratio != positive_ratio) {
     sentiment = 'positive';
   } else {
     sentiment = 'negative';

@@ -46,7 +46,6 @@ function Dashboard() {
       console.log(error);
       setIsCommentsLoaded(false);
     }
-
   }, [selectedWord]);
 
   const search = async () => {
@@ -55,7 +54,7 @@ function Dashboard() {
     );
     const data = await response.json();
     setSelectedWord(data);
-  }
+  };
 
   return (
     <Container>
@@ -71,11 +70,12 @@ function Dashboard() {
           textAlign: 'center',
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          <SearchIcon />
-        </Avatar>
+        <Avatar
+          alt='Sitegeist Logo'
+          src='https://web-cruz-hacks2024.vercel.app/Sitegeist_icon.png'
+        />
         <Typography component='h1' variant='h5'>
-          Cruz Hack 2024
+          Sitegeist
         </Typography>
         <Box
         marginLeft={5} //FIXME
@@ -98,19 +98,36 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-            <GoogleSearchBar search={search} searchWord={searchWord} setSearchWord={setSearchWord} />
+            <GoogleSearchBar
+              search={search}
+              searchWord={searchWord}
+              setSearchWord={setSearchWord}
+            />
             <ColoredChips setSelectedWord={setSelectedWord} />
           </Box>
 
           {/* Posts */}
           <Box width={'100%'} height={'100vh'} className='component' sx={{ overflowY: 'auto' }}>
             <Typography component='h1' variant='h5'>
-              {selectedWord['word'] ? "Selected `" + selectedWord['word'] + "`" : 'Please select a word'}
+              {selectedWord['word']
+                ? 'Selected `' + selectedWord['word'] + '`'
+                : 'Please select a word'}
             </Typography>
             {isCommentsLoading || comments.length === 0 ? (
-              <YellowSlugLoader />
+              <Box
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+                pt={5}
+                gap={3}
+              >
+                <YellowSlugLoader />
+              </Box>
             ) : (
-              <PostColumn comments={comments} clickedContentDashboard={handleContentClick} />
+              <PostColumn
+                comments={comments}
+                clickedContentDashboard={handleContentClick}
+              />
             )}
           </Box>
 
@@ -121,8 +138,8 @@ function Dashboard() {
               flexDirection: isMobile ? 'row' : 'column',
             }}
           >
-			      <PieChart selectedWord={selectedWord} />
-            
+            <PieChart selectedWord={selectedWord} />
+
             <AskGPT prmpt={clickedContentDashboard} />
           </Box>
         </Box>
