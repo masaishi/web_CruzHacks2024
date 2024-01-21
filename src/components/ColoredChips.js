@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 
 import Chip from '@mui/material/Chip';
+import { useState, useEffect } from 'react';
 
 const samples = [
   'One',
@@ -14,6 +15,13 @@ const samples = [
   'Nine',
   'Ten',
 ];
+function putKeywordIntoList(data) {
+  let keywords = [];
+  for (let i = 0; i < data.length; i++) {
+    keywords.push(data[i]['word']);
+  }
+  return keywords;
+}
 
 function createColoredChips(keywords) {
   let chip_color = [];
@@ -35,6 +43,7 @@ function createColoredChips(keywords) {
   for (let i = 0; i < keywords.length; i++) {
     colored_chips.push(
       <Chip
+        key={keywords[i]}
         label={keywords[i]}
         variant='outlined'
         color={chip_color[i]}
@@ -46,7 +55,20 @@ function createColoredChips(keywords) {
   return colored_chips;
 }
 
-export default function Test({ res }) {
+export default function ColoredChips() {
+  const [data, setData] = useState([]);
+  const [keywords, setKeywords] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(
+        'https://api-cruzhacks2024.onrender.com/word_freq?limit=30'
+      );
+      const data = await response.json();
+      setData(data);
+      setKeywords(putKeywordIntoList(data));
+    })();
+  }, []);
+
   return (
     <Box m='0.50rem'>
       <Box
@@ -58,7 +80,7 @@ export default function Test({ res }) {
           gap: 1,
         }}
       >
-        {createColoredChips(samples)}
+        {createColoredChips(keywords)}
       </Box>
     </Box>
   );
