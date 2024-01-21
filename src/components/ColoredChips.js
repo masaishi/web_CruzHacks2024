@@ -3,18 +3,6 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import { useState, useEffect } from 'react';
 
-const samples = [
-  'One',
-  'Two',
-  'Three',
-  'Four',
-  'Five',
-  'Six',
-  'Seven',
-  'Eight',
-  'Nine',
-  'Ten',
-];
 function putKeywordIntoList(data) {
   let keywords = [];
   for (let i = 0; i < data.length; i++) {
@@ -23,24 +11,46 @@ function putKeywordIntoList(data) {
   return keywords;
 }
 
-function createColoredChips(keywords, setSelectedWord) {
+function calculateAvgSentiment(element) {
+  console.log('Element:', element);
+  let total_num = 0;
+  let sentiment = '';
+
+  total_num += element['neutral_num'];
+  total_num += element['positive_num'];
+  total_num += element['negative_num'];
+  let positive_ratio = element['positive_num'] / total_num;
+  let negative_ratio = element['negative_num'] / total_num;
+  let max_ratio = Math.max(positive_ratio, negative_ratio);
+
+  if (max_ratio == positive_ratio) {
+    sentiment = 'positive';
+  } else {
+    sentiment = 'negative';
+  }
+  return sentiment;
+}
+
+function createColoredChips(data, keywords, setSelectedWord) {
   let chip_color = [];
   let colored_chips = [];
+  let sentiment = 'neutral';
 
-  keywords.forEach((element) => {
-    switch (element) {
+  data.forEach((element) => {
+    sentiment = calculateAvgSentiment(element);
+    switch (sentiment) {
       case 'positive':
         chip_color.push('success');
         break;
       case 'negative':
         chip_color.push('error');
         break;
-      default:
+      case 'neutral':
         chip_color.push('info');
     }
   });
 
-  for (let i = 0; i < keywords.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     colored_chips.push(
       <Chip
         key={keywords[i]}
@@ -80,7 +90,7 @@ export default function ColoredChips(props) {
           gap: 1,
         }}
       >
-        {createColoredChips(keywords, props.setSelectedWord)}
+        {createColoredChips(data, keywords, props.setSelectedWord)}
       </Box>
     </Box>
   );

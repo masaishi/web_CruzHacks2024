@@ -10,6 +10,7 @@ import ColoredChips from '@/components/ColoredChips';
 import PostColumn from '@/components/PostColumn';
 import PieChart from '@/components/PieChart';
 import Copyright from '@/components/Copyright';
+import YellowSlugLoader from '@/components/YellowSlugLoader';
 import AskGPT from '@/components/AskGPT';
 import yellow_slug from '@/assets/yellow_slug.json';
 
@@ -99,12 +100,7 @@ function Dashboard() {
           <Box width={'100%'} height={'75%'} className='component'>
             <PostColumn clickedContentDashboard={handleContentClick} />
             { isCommentsLoading || comments.length === 0 ? (
-            //  <Lottie
-            //    animationData={yellow_slug}
-            //    className="flex justify-center items-center"
-            //    loop={true}
-            //  />
-              <h1> Please Select Word</h1>
+              <YellowSlugLoader />
             ) : (
               <PostColumn comments={comments} />
             )}
@@ -112,7 +108,7 @@ function Dashboard() {
 
           {/* PieChart */}
           <Box
-            width={isMobile ? "120%" : "100%"}
+            width={isMobile ? "100%" : "100%"}
             
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
