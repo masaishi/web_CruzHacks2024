@@ -43,13 +43,13 @@ function Dashboard() {
         );
         const data = await response.json();
         setComments(data['examples']);
+
+		setIsCommentsLoaded(false);
       })();
     } catch (error) {
       console.log(error);
       setIsCommentsLoaded(false);
       }
-    
-    setIsCommentsLoaded(false);
   }, [selectedWord]);
 
   return (
