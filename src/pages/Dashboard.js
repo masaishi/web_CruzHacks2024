@@ -47,6 +47,15 @@ function Dashboard() {
     setIsCommentsLoaded(false);
   }, [selectedWord]);
 
+  const yellowSlugOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: yellow_slug,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
   return (
     <Container>
       <CssBaseline />
@@ -94,12 +103,12 @@ function Dashboard() {
           {/* Posts */}
           <Box width={'100%'} height={'75%'} className='component'>
             { isCommentsLoading || comments.length === 0 ? (
-            //  <Lottie
-            //    animationData={yellow_slug}
-            //    className="flex justify-center items-center"
-            //    loop={true}
-            //  />
-              <h1> Please Select Word</h1>
+              <Lottie
+                options={yellowSlugOptions}
+                width={isMobile ? '100%' : '100%'}
+                height={isMobile ? '100%' : '100%'}
+                className="flex justify-center items-center"
+              />
             ) : (
               <PostColumn comments={comments} />
             )}
@@ -107,7 +116,7 @@ function Dashboard() {
 
           {/* PieChart */}
           <Box
-            width={isMobile ? "120%" : "100%"}
+            width={isMobile ? "100%" : "100%"}
             
             sx={{
               flexDirection: isMobile ? 'row' : 'column',
