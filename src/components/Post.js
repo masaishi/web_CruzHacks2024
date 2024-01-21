@@ -20,9 +20,9 @@ let sentiment_map = {
   disgust: 'negative',
 };
 
-function highlight_sentence(sentence_text, sentiment) {
+function highlight_sentence(sentence_text, sentiment, sentence_id) {
   let text_color = 'black';
-  switch (sentiment_map[sentiment]) {
+  switch (sentiment) {
     case 'positive':
       text_color = 'green';
       break;
@@ -34,7 +34,7 @@ function highlight_sentence(sentence_text, sentiment) {
       break;
   }
   return (
-    <Typography color={text_color} display={'inline'}>
+    <Typography key={sentence_id} color={text_color} display={'inline'}>
       {sentence_text}
     </Typography>
   );
@@ -44,12 +44,7 @@ function highlight_post(post) {
   let colored_post = [];
 
   post.forEach((sentence) => {
-    const sentence_id = sentence[0];
-    const sentiment = sentence[1];
-    const sentiment_score = sentence[2];
-    const sentence_text = sentence[3] + ' ';
-
-    colored_post.push(highlight_sentence(sentence_text, sentiment));
+    colored_post.push(highlight_sentence(sentence['text'], sentence['label'], "post" + sentence['sentence_id'] + sentence['comment_id']));
   });
 
   return colored_post;
