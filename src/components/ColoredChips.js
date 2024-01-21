@@ -57,7 +57,7 @@ function createColoredChips(data, keywords, setSelectedWord) {
         label={keywords[i]}
         variant='outlined'
         color={chip_color[i]}
-        onClick={() => setSelectedWord(keywords[i])}
+        onClick={() => setSelectedWord(data[i])}
         clickable
       />
     );
