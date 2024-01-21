@@ -105,14 +105,14 @@ function Dashboard() {
           </Box>
 
           {/* Posts */}
-          <Box width={'100%'} height={'75%'} className='component'>
+          <Box width={'100%'} height={'100vh'} className='component' sx={{ overflowY: 'auto' }}>
             <Typography component='h1' variant='h5'>
-                {selectedWord['word'] ? "Selected `" + selectedWord['word'] + "`" : 'Please select a word'}
+              {selectedWord['word'] ? "Selected `" + selectedWord['word'] + "`" : 'Please select a word'}
             </Typography>
-            { isCommentsLoading || comments.length === 0 ? (
+            {isCommentsLoading || comments.length === 0 ? (
               <YellowSlugLoader />
             ) : (
-              <PostColumn comments={comments} clickedContentDashboard={handleContentClick}/>
+              <PostColumn comments={comments} clickedContentDashboard={handleContentClick} />
             )}
           </Box>
 

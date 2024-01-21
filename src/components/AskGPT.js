@@ -10,7 +10,6 @@ function AskGPT(Prompt) {
   const callChatGPT = async () => {
     try {
       const promptString = JSON.stringify(Prompt).toString();
-      // if (promptString != '[object Object]' && typeof promptString === 'string' && promptString !== '') {
         const apiUrl = `https://api-cruzhacks2024.onrender.com/chatgpt?input=(Find%20a%20solution%20to%20issues:%20${promptString})}&prompt=You%20are%20good%20at%20finding%20an%20solution%20to%20issues.`;
         console.log(apiUrl);
         const response = await fetch(apiUrl, {
@@ -24,7 +23,6 @@ function AskGPT(Prompt) {
         } else {
           console.error('Error:', response.statusText);
         }
-      // }
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -56,7 +54,7 @@ function AskGPT(Prompt) {
       ) : (
         <>
           {content && (
-            <Box>
+            <Box width={'100%'} height={'50vh'} style={{ overflow: 'auto' }}>
               {content}
             </Box>
           )}
